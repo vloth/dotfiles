@@ -1,0 +1,22 @@
+
+
+# WHY, not WHAT
+# Example: Σ feat: Allow users to go through an alternative flow 
+# |<----  Using a Maximum Of 100 Characters  ---->|
+
+# Explain why this change is being made
+# |<----   Try To Limit Each Line to a Maximum Of 72 Characters   ---->|
+
+# --- COMMIT END ---
+# Type can be   (greek type font)
+#    Σ feat     (new feature)
+#    ω fix      (bug fix)
+#    Ξ docs     (changes to documentation)
+#    ζ style    (formatting, missing semi colons, etc; no code change)
+#    ϋ refactor (refactoring production code)
+#    Δ perf     (improving performance)
+#    Γ build    (changes to build system, webpack, brocolli, etc)
+#    ϑ ci       (changes to ci config files, Jenkinsfile, Travis)
+#    π test     (adding or refactoring tests; no production code change)
+#    θ chore    (updating grunt tasks etc; no production code change)
+#    Ψ revert   (reverts previous commit)
