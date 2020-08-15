@@ -1,0 +1,28 @@
+[core]
+  pager = diff-so-fancy | less --tabs=4 -RFX
+  editor = vi
+
+[color]
+  ui = true
+
+[commit]
+  template = ~/.gitmessage
+  gpgsign = true
+
+[rerere]
+  enabled = true
+
+[color "status"]
+  added = 131
+  untracked = 8 bold
+
+[color "diff"]
+  old = 88
+  new = 72
+  diffstuff=9
+  
+[color "diff-highlight"]
+  oldNormal = 88
+  oldHighlight = 196 bold 236
+  newNormal = 72
+  newHighlight = 122 bold 236
