@@ -1,5 +1,5 @@
 # open alacrity
-cmd - return : open --new -a /Applications/Alacritty.app/Contents/MacOS/alacritty
+ctrl + cmd - return : open --new -a /Applications/Alacritty.app/Contents/MacOS/alacritty
 
 # focus window
 cmd - j : yabai -m window --focus south
