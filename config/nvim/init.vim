@@ -11,6 +11,9 @@ Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
+source ~/.config/nvim/themes/gruvbox.vim
+source ~/.config/nvim/themes/base.vim
+
 let mapleader=" " | let maplocalleader=";"
 
 set nonumber
@@ -57,6 +60,21 @@ function! s:show_documentation()
   endif
 endfunction
 
-source ~/.config/nvim/fzf-rg.vim
-source ~/.config/nvim/themes/gruvbox.vim
-source ~/.config/nvim/themes/base.vim
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comment' } }
+let g:fzf_action = { 'ctrl-q': 'wall | bdelete', 'ctrl-t': 'tab split', 'ctrl-s': 'split', 'ctrl-v': 'vsplit' }
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
