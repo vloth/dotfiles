@@ -28,3 +28,4 @@ exe 'hi TabLine     ctermfg=' . g:theme_neutral . ' ctermbg=' . g:theme_bg . ' c
 exe 'hi TabLineSel  ctermfg=' . g:theme_accent1 . ' ctermbg=' . 'NONE'
 exe 'hi TabLineFill ctermfg=' . g:theme_bg
 exe 'hi PmenuSel    ctermfg=' . g:theme_neutral2 . ' ctermbg=' . g:theme_bg
+exe 'hi Pmenu       ctermfg=' . g:theme_neutral2 . ' ctermbg=' . g:theme_black
