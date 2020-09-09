@@ -11,11 +11,7 @@ Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
-source ~/.config/nvim/themes/gruvbox.vim
-source ~/.config/nvim/themes/base.vim
-
 let mapleader=" " | let maplocalleader=";"
-
 set nonumber
   \ nobackup noswapfile
   \ ignorecase smartcase
@@ -78,3 +74,5 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
+source ~/.config/nvim/themes/gruvbox.vim
