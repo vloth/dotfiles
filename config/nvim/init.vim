@@ -32,9 +32,10 @@ nmap <silent> <leader>rr :source $MYVIMRC<cr>
 nmap <c-c> :set hlsearch!<cr>
 nmap <leader>c :bd<cr>
 nmap <tab> :bnext<cr> | nnoremap <s-tab> :bprevious<cr>
-vmap <silent> <leader>y :<cr>:let @a=@" \| execute "normal! vgvy" \| let res=system("pbcopy", @") \| let @"=@a<cr>
+vmap <silent> <leader>y :<cr>:let @a=@" \| execute "normal! vgvy" \| let res=system("pbcopy", @") \|<cr>
+nmap <leader>d :let @*=expand("%:p")<CR>
 
-let g:nnn#set_default_mappings=0 | nnoremap <silent> <leader>e :NnnPicker %<CR>
+let g:nnn#set_default_mappings=0 | nnoremap <silent> <leader>e :execute "NnnPicker " . expand('%:~:.')<CR>
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 nmap <leader>f :Files<cr> 
 nmap <leader>g :GFiles<cr> 
