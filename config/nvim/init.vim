@@ -83,4 +83,4 @@ endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
-source ~/.config/nvim/themes/gruvbox.vim
+source $HOME/vloth/dotfiles/themes/gruvbox.vim

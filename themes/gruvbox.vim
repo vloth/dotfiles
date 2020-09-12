@@ -12,4 +12,4 @@ let g:theme_warn='3'
 let g:theme_info='4'
 let g:theme_success='2' 
 
-source ~/.config/nvim/themes/base.vim
+source $HOME/vloth/dotfiles/themes/base.vim
