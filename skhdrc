@@ -38,6 +38,9 @@ alt + shift - c  :yabai -m space --focus "$(yabai -m query --spaces --display \
 cmd + ctrl - l  : yabai -m window --display next; yabai -m display --focus next
 cmd + ctrl - h  : yabai -m window --display prev; yabai -m display --focus prev
 
+# lock screen
+cmd + shift - l  : pmset displaysleepnow
+
 # increase/decrease right window
 alt - a : yabai -m window --resize left:-100:0
 alt + cmd - a : yabai -m window --resize left:+100:0
