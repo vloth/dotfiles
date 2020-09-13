@@ -19,6 +19,9 @@ cmd - l : yabai -m window --focus next \
     || yabai -m display --focus next \
     || yabai -m display --focus first
 
+# select zoom window
+cmd + shift - z : yabai -m window --focus "$(yabai -m query --windows | jq -re '.[] | select(.title=="Zoom Meeting").id')"
+
 # swap window left/right
 alt - s : yabai -m window --swap first || yabai -m window --swap last 
 
