@@ -40,7 +40,7 @@ let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debu
 nmap <leader>f :Files<cr> 
 nmap <leader>g :GFiles<cr> 
 nmap <leader>sw :Rg <C-R><C-W><CR> 
-nmap <leader>ss :Rg 
+nmap <leader>ss :Rg! 
 
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr> | nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
