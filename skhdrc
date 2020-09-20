@@ -63,3 +63,6 @@ alt - t : yabai -m space --create && \
 
 # destroy desktop
 alt - q : yabai -m space --destroy
+
+# custom enterprise bindings
+.load "vloth/dotfiles/skhdrc.enterprise"
