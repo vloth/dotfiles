@@ -1,0 +1,102 @@
+env:
+  TERM: xterm-256color-italic
+
+window:
+  dynamic_title: false
+  dimensions:
+    columns: 0
+    lines: 0
+
+  padding:
+    x: 12
+    y: 12
+
+  dynamic_padding: false
+  decorations: none
+
+font:
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Regular
+
+  italic:
+    family: Pacifico Nerd Font
+    style: Regular
+
+  size: 12
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0
+
+  use_thin_strokes: true
+
+bell:
+  animation: EaseOutExpo
+  duration: 0
+  color: '0xffffff'
+
+background_opacity: 1.0
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+  hide_when_typing: false
+
+  url:
+    modifiers: None
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+  save_to_clipboard: false
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+key_bindings:
+  - { key: H,           mods: Alt,             chars: "\x1bh"           }
+  - { key: H,           mods: Alt|Shift,       chars: "\x1bH"           }
+  - { key: J,           mods: Alt,             chars: "\x1bj"           }
+  - { key: J,           mods: Alt|Shift,       chars: "\x1bJ"           }
+  - { key: K,           mods: Alt,             chars: "\x1bk"           }
+  - { key: K,           mods: Alt|Shift,       chars: "\x1bK"           }
+  - { key: L,           mods: Alt,             chars: "\x1bl"           }
+  - { key: L,           mods: Alt|Shift,       chars: "\x1bL"           }
+
+live_config_reload: true
+enable_experimental_conpty_backend: false
+alt_send_esc: true
+
+schemes:
+  gruvbox: &gruvbox
+    primary:
+      background: '0x282828'
+      foreground: '0xdfbf8e'
+    normal:
+      black:   '0x665c54'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xe78a4e'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xdfbf8e'
+    bright:
+      black:   '0x928374'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xe3a84e'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xdfbf8e'
+
+colors: *gruvbox
