@@ -33,7 +33,7 @@ nmap <c-c> :set hlsearch!<cr>
 nmap <leader>c :bd<cr>
 nmap <tab> :bnext<cr> | nnoremap <s-tab> :bprevious<cr>
 vmap <silent> <leader>y :<cr>:let @a=@" \| execute "normal! vgvy" \| let res=system("pbcopy", @") \|<cr>
-nmap <leader>d :let @*=expand("%:p")<CR>
+nmap <leader>p d:let @*=expand("%:p")<CR>
 
 let g:nnn#set_default_mappings=0 | nnoremap <silent> <leader>e :execute "NnnPicker " . expand('%:~:.')<CR>
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
@@ -41,10 +41,6 @@ nmap <leader>f :Files<cr>
 nmap <leader>g :GFiles<cr> 
 nmap <leader>sw :Rg <C-R><C-W><CR> 
 nmap <leader>ss :Rg! 
-
-let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <C-h> :TmuxNavigateLeft<cr> | nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <C-k> :TmuxNavigateUp<cr>   | nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 
 let g:gitgutter_sign_added="˖"            | let g:gitgutter_sign_modified="◈"
 let g:gitgutter_sign_modified_removed="▰" | let g:gitgutter_sign_removed="྾"
