@@ -46,7 +46,7 @@ if ! zgen saved; then
     zgen save
 fi
 
-MNML_USER_CHAR=''
+MNML_USER_CHAR=''
 MNML_OK_COLOR=4
 MNML_INSERT_CHAR=''
 MNML_PROMPT=(mnml_status mnml_keymap)
