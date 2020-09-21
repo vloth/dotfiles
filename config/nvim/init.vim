@@ -10,7 +10,6 @@ Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 Plug 'mcchrish/nnn.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'ap/vim-buftabline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'melonmanchan/vim-tmux-resizer'
 Plug 'airblade/vim-gitgutter'
@@ -39,6 +38,7 @@ let g:nnn#set_default_mappings=0 | nnoremap <silent> <leader>e :execute "NnnPick
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 nmap <leader>f :Files<cr> 
 nmap <leader>g :GFiles<cr> 
+nmap <leader><leader> :Buffers<cr> 
 nmap <leader>sw :Rg <C-R><C-W><CR> 
 nmap <leader>ss :Rg! 
 
@@ -79,4 +79,4 @@ endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
-source $HOME/vloth/dotfiles/themes/gruvbox.vim
+source $HOME/vloth/dotfiles/themes/challenger_deep.vim

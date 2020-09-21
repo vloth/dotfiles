@@ -29,3 +29,34 @@ exe 'hi TabLineSel  ctermfg=' . g:theme_accent1 . ' ctermbg=' . 'NONE'
 exe 'hi TabLineFill ctermfg=' . g:theme_bg
 exe 'hi PmenuSel    ctermfg=' . g:theme_neutral2 . ' ctermbg=' . g:theme_bg
 exe 'hi Pmenu       ctermfg=' . g:theme_neutral2 . ' ctermbg=' . g:theme_black
+
+function! s:update_fzf_colors()
+  let rules =
+  \ { 'fg':      [['Normal',       'fg']],
+    \ 'bg':      [['Normal',       'bg']],
+    \ 'hl':      [['IncSearch',    'fg']],
+    \ 'fg+':     [['StatusLine',   'bg']],
+    \ 'bg+':     [['Search',       'fg']],
+    \ 'hl+':     [['Statement',    'fg']],
+    \ 'info':    [['PreProc',      'fg']],
+    \ 'prompt':  [['Conditional',  'fg']],
+    \ 'pointer': [['Exception',    'fg']],
+    \ 'marker':  [['Keyword',      'fg']],
+    \ 'spinner': [['Label',        'fg']],
+    \ 'header':  [['Comment',      'fg']] }
+  let cols = []
+  for [name, pairs] in items(rules)
+    for pair in pairs
+      let code = synIDattr(synIDtrans(hlID(pair[0])), pair[1])
+      if !empty(name) && code > 0
+        call add(cols, name.':'.code)
+        break
+      endif
+    endfor
+  endfor
+  let s:orig_fzf_default_opts = get(s:, 'orig_fzf_default_opts', $FZF_DEFAULT_OPTS)
+  let $FZF_DEFAULT_OPTS = s:orig_fzf_default_opts .
+        \ empty(cols) ? '' : (' --color='.join(cols, ','))
+ endfunction
+ 
+ autocmd VimEnter,ColorScheme * call s:update_fzf_colors()
