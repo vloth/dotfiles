@@ -37,7 +37,7 @@ nmap <leader>p d:let @*=expand("%:p")<CR>
 let g:nnn#set_default_mappings=0 | nnoremap <silent> <leader>e :execute "NnnPicker " . expand('%:~:.')<CR>
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 nmap <leader>f :Files<cr> 
-nmap <leader>g :GFiles<cr> 
+nmap <leader>g :GFiles?<cr> 
 nmap <leader><leader> :Buffers<cr> 
 nmap <leader>sw :Rg <C-R><C-W><CR> 
 nmap <leader>ss :Rg! 
@@ -61,7 +61,8 @@ function! s:show_documentation()
 endfunction
 
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comment' } }
+let $FZF_DEFAULT_OPTS = '--height 70% --reverse'
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9, 'highlight': 'Comment' } }
 let g:fzf_action = { 'ctrl-q': 'wall | bdelete', 'ctrl-t': 'tab split', 'ctrl-s': 'split', 'ctrl-v': 'vsplit' }
 
 command! -bang -nargs=* Rg

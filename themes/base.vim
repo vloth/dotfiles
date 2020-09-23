@@ -55,8 +55,7 @@ function! s:update_fzf_colors()
     endfor
   endfor
   let s:orig_fzf_default_opts = get(s:, 'orig_fzf_default_opts', $FZF_DEFAULT_OPTS)
-  let $FZF_DEFAULT_OPTS = s:orig_fzf_default_opts .
-        \ empty(cols) ? '' : (' --color='.join(cols, ','))
- endfunction
+  let $FZF_DEFAULT_OPTS = s:orig_fzf_default_opts . (' --color='.join(cols, ','))
+endfunction
  
- autocmd VimEnter,ColorScheme * call s:update_fzf_colors()
+autocmd VimEnter,ColorScheme * call s:update_fzf_colors()
