@@ -30,7 +30,6 @@ set nonumber
 nmap <silent> <leader>rr :source $MYVIMRC<cr>
 nmap <c-c> :set hlsearch!<cr>
 nmap <leader>c :bd<cr>
-nmap <tab> :bnext<cr> | nnoremap <s-tab> :bprevious<cr>
 vmap <silent> <leader>y :<cr>:let @a=@" \| execute "normal! vgvy" \| let res=system("pbcopy", @") \|<cr>
 nmap <leader>p d:let @*=expand("%:p")<CR>
 
