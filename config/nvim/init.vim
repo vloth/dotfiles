@@ -35,6 +35,12 @@ nmap <leader>p d:let @*=expand("%:p")<CR>
 
 let g:nnn#set_default_mappings=0 | nnoremap <silent> <leader>e :execute "NnnPicker " . expand('%:~:.')<CR>
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
+let g:nnn#action = {
+      \ '<c-t>': 'tab split',
+      \ '<c-x>': 'split',
+      \ '<c-v>': 'vsplit' }
+let g:nnn#command = 'nnn -o'
+
 nmap <leader>f :Files<cr> 
 nmap <leader>g :GFiles?<cr> 
 nmap <leader><leader> :Buffers<cr> 

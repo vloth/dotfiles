@@ -5,6 +5,7 @@ exe 'hi StatusLine   ctermfg=' . g:theme_bg      . ' ctermbg=' . g:theme_accent1
 exe 'hi StatusLineNC ctermfg=' . g:theme_bg      . ' ctermbg=' . g:theme_neutral
 exe 'hi SignColumn   ctermbg=' . 'NONE'
 exe 'hi Folded       ctermbg=' . 'NONE'          . ' cterm=italic'
+exe 'hi MatchParen   ctermbg=' . g:theme_neutral
 
 exe 'hi Visual    ctermbg=' . g:theme_neutral2
 exe 'hi Search    ctermfg=' . g:theme_black   . ' ctermbg=' . g:theme_accent2
