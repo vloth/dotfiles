@@ -35,6 +35,7 @@ vmap <silent> <leader>y :<cr>:let @a=@" \| execute "normal! vgvy" \| let res=sys
 nmap <leader>p d:let @*=expand("%:p")<CR>
 
 let g:coc_global_extensions = ['coc-conjure']
+nmap <silent><localleader>f :%!joker --format %<cr>
 
 let g:nnn#set_default_mappings=0 | nnoremap <silent> <leader>e :execute "NnnPicker " . expand('%:~:.')<CR>
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
