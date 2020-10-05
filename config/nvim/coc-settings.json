@@ -52,7 +52,7 @@
        "isStderr": true,
        "formatLines": 1,
        "formatPattern": [
-         "^[^:]+:(\\d+):(\\d+):\\s+Parse\\s([^:]+):\\s+(.*)$",
+         "^[^:]+:(\\d+):(\\d+):\\s+Read|Parse\\s([^:]+):\\s+(.*)$",
            {
              "line": 1,
              "column": 2,
@@ -62,8 +62,7 @@
          ],
          "securities": {
            "error": "error",
-           "warning": "warning",
-           "note": "info"
+           "warning": "warning"
        } 
     }
   }
