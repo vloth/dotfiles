@@ -4,7 +4,7 @@
 
    "suggest.autoTrigger":"trigger",
 
-   "diagnostic.errorSign":"✖",
+   "diagnostic.errorSign":"ﮊ",
    "diagnostic.warningSign":"",
    "diagnostic.infoSign":"",
    "diagnostic.hintSign":"﯎",
@@ -52,7 +52,7 @@
        "isStderr": true,
        "formatLines": 1,
        "formatPattern": [
-         "^[^:]+:(\\d+):(\\d+):\\s+Read|Parse\\s([^:]+):\\s+(.*)$",
+         "^[^:]+:(\\d+):(\\d+):\\s+Parse\\s([^:]+):\\s+(.*)$",
            {
              "line": 1,
              "column": 2,
