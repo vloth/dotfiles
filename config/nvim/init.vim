@@ -14,6 +14,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'melonmanchan/vim-tmux-resizer'
 Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
+Plug 'Olical/conjure', {'tag': 'v4.5.0'}
 
 call plug#end()
 
@@ -32,6 +33,8 @@ nmap <c-c> :set hlsearch!<cr>
 nmap <leader>c :bd<cr>
 vmap <silent> <leader>y :<cr>:let @a=@" \| execute "normal! vgvy" \| let res=system("pbcopy", @") \|<cr>
 nmap <leader>p d:let @*=expand("%:p")<CR>
+
+let g:coc_global_extensions = ['coc-conjure']
 
 let g:nnn#set_default_mappings=0 | nnoremap <silent> <leader>e :execute "NnnPicker " . expand('%:~:.')<CR>
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }

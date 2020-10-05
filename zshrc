@@ -10,6 +10,7 @@ KEYTIMEOUT=1
 HISTSIZE=10000000
 SAVEHIST=10000000
 VISUAL=nvim
+EDITOR=nvim
 
 setopt extended_history
 setopt inc_append_history
@@ -29,7 +30,6 @@ export PATH="/usr/local/opt/avr-gcc@7/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export BAT_THEME="Dracula"
-
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
 
 source "${HOME}/.zgen/zgen.zsh"
@@ -57,6 +57,7 @@ MNML_MAGICENTER=()
 
 zstyle ':completion:*' menu select
 source ~/.alias
+source $HOME/jdks/setup-zulu-11.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
