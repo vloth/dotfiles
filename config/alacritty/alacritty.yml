@@ -62,6 +62,9 @@ key_bindings:
   - { key: K,           mods: Alt|Shift,       chars: "\x1bK"           }
   - { key: L,           mods: Alt,             chars: "\x1bl"           }
   - { key: L,           mods: Alt|Shift,       chars: "\x1bL"           }
+  - { key: Z,           mods: Command,         action: ResetFontSize    }
+  - { key: I,           mods: Command,         action: IncreaseFontSize }
+  - { key: D,           mods: Command,         action: DecreaseFontSize }
 
 live_config_reload: true
 enable_experimental_conpty_backend: false

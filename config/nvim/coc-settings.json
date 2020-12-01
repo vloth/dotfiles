@@ -14,6 +14,9 @@
    "javascript.suggest.autoImports":true,
    "typescript.suggest.autoImports":true,
 
+   "json.enable": true,
+   "json.format.enable": true,
+
    "diagnostic-languageserver.filetypes": {"clojure": ["joker", "clj-kondo"]},
    "diagnostic-languageserver.formatFiletypes": {"clojure": "joker"},
    "diagnostic-languageserver.trace.server": "verbose",

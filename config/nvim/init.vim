@@ -49,7 +49,12 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gv :call CocAction('jumpDefinition', 'vsplit')<cr>
 nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
-nmap <leader>rn <Plug>(coc-rename)
+nmap ge <Plug>(coc-rename)
+nmap ga <Plug>(coc-codeaction)
+vmap ga <Plug>(coc-codeaction-selected)
+
+command! -nargs=0 Format :call CocAction('format')
+command! -nargs=0 Organize :call CocAction('runCommand', 'editor.action.organizeImport')
 
 inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
 inoremap <silent><expr> <c-space> coc#refresh()
