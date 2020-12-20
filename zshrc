@@ -57,7 +57,8 @@ MNML_MAGICENTER=()
 
 zstyle ':completion:*' menu select
 source ~/.alias
-source $HOME/jdks/setup-zulu-11.sh
+# source $HOME/jdks/setup-zulu-11.sh
+eval "$(jenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

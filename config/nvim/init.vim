@@ -22,6 +22,8 @@ set nonumber
   \ completeopt=longest wildmenu
   \ timeoutlen=1000 ttimeoutlen=0
 
+nmap <leader>m @@
+
 nmap <silent> <leader>rr :source $MYVIMRC<cr>
 nmap <c-c> :set hlsearch!<cr>
 nmap <leader>c :bd<cr>

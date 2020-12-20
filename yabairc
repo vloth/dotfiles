@@ -30,4 +30,6 @@ yabai -m config left_padding                 100
 yabai -m config right_padding                100
 yabai -m config window_gap                   5
 
+yabai -m rule --add title='actors$' manage=off
+
 echo "yabai configuration loaded..."
