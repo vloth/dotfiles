@@ -127,4 +127,4 @@ endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
-source $HOME/vloth/dotfiles/themes/challenger_deep.vim
+source $HOME/vloth/dotfiles/themes/palenight.vim

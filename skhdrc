@@ -64,9 +64,9 @@ alt - t : yabai -m space --create && \
 # destroy desktop
 alt - q : yabai -m space --destroy
 
-alt - p : yabai -m window --toggle sticky;\
-          yabai -m window --toggle topmost;\
-          yabai -m window --grid 5:5:4:0:1:1
+# float
+cmd - f : yabai -m window --toggle float;\
+          yabai -m window --grid 5:5:2:0:4:5
 
 # custom enterprise bindings
 .load "vloth/dotfiles/skhdrc.enterprise"

@@ -7,8 +7,8 @@ window:
     columns: 0
     lines: 0
   padding:
-    x: 12
-    y: 12
+    x: 15
+    y: 15
   dynamic_padding: false
   decorations: none
 
@@ -19,7 +19,7 @@ font:
   italic:
     family: Pacifico Nerd Font
     style: Regular
-  size: 12
+  size: 15
   offset:
     x: 0
     y: 0
@@ -117,4 +117,30 @@ schemes:
       cyan:    '0x63f2f1'
       white:   '0xa6b3cc'
 
-colors: *challenger-deep
+  palenight: &palenight
+    primary:
+      background: '0x292d3e'
+      foreground: '0x959dcb'
+    cursor:
+      text: '0x292d3e'
+      cursor: '0x959dcb'
+    normal:
+      black:   '0x292d3e'
+      red:     '0xf07178'
+      green:   '0xc3e88d'
+      yellow:  '0xffcb6b'
+      blue:    '0x82aaff'
+      magenta: '0xc792ea'
+      cyan:    '0x89ddff'
+      white:   '0x959dcb'
+    bright:
+      black:   '0x676e95'
+      red:     '0xf07178'
+      green:   '0xc3e88d'
+      yellow:  '0xffcb6b'
+      blue:    '0x82aaff'
+      magenta: '0xc792ea'
+      cyan:    '0x89ddff'
+      white:   '0xffffff'
+
+colors: *palenight

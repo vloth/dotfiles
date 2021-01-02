@@ -33,18 +33,18 @@ exe 'hi Pmenu       ctermfg=' . g:theme_neutral2 . ' ctermbg=' . g:theme_black
 
 function! s:update_fzf_colors()
   let rules =
-  \ { 'fg':      [['Normal',       'fg']],
-    \ 'bg':      [['Normal',       'bg']],
-    \ 'hl':      [['IncSearch',    'fg']],
-    \ 'fg+':     [['StatusLine',   'bg']],
-    \ 'bg+':     [['Search',       'fg']],
-    \ 'hl+':     [['Statement',    'fg']],
-    \ 'info':    [['PreProc',      'fg']],
-    \ 'prompt':  [['Conditional',  'fg']],
-    \ 'pointer': [['Exception',    'fg']],
-    \ 'marker':  [['Keyword',      'fg']],
-    \ 'spinner': [['Label',        'fg']],
-    \ 'header':  [['Comment',      'fg']] }
+  \ { 'fg':      [['Normal',     'fg']],
+    \ 'bg':      [['Normal',     'bg']],
+    \ 'hl':      [['IncSearch',  'fg']],
+    \ 'fg+':     [['StatusLine', 'bg']],
+    \ 'bg+':     [['Search',     'fg']],
+    \ 'hl+':     [['Statement',  'fg']],
+    \ 'info':    [['PreProc',    'fg']],
+    \ 'prompt':  [['Search',     'bg']],
+    \ 'pointer': [['Exception',  'fg']],
+    \ 'marker':  [['Keyword',    'fg']],
+    \ 'spinner': [['Label',      'fg']],
+    \ 'header':  [['Comment',    'fg']] }
   let cols = []
   for [name, pairs] in items(rules)
     for pair in pairs
