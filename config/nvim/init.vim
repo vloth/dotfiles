@@ -9,8 +9,23 @@ Plug 'melonmanchan/vim-tmux-resizer'
 Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
 Plug 'Olical/conjure', {'tag': 'v4.5.0'}
+Plug 'junegunn/goyo.vim'
+Plug 'bfontaine/zprint.vim'
+Plug 'guns/vim-clojure-static'
+Plug 'luochen1990/rainbow'
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
 
 call plug#end()
+
+let g:rainbow_active = 1
+
+ let g:sexp_mappings = {
+            \ 'sexp_swap_list_backward':     '',
+            \ 'sexp_swap_list_forward':      '',
+            \ 'sexp_swap_element_backward':  '',
+            \ 'sexp_swap_element_forward':   '',
+            \ }
 
 let mapleader=" " | let maplocalleader=";"
 set nonumber
@@ -25,8 +40,8 @@ set nonumber
 nmap <leader>m @@
 
 nmap <silent> <leader>rr :source $MYVIMRC<cr>
+nnoremap <leader>q :b # <bar> :bd! # <CR>
 nmap <c-c> :set hlsearch!<cr>
-nmap <leader>c :bd<cr>
 vmap <silent> <leader>y :<cr>:let @a=@" \| execute "normal! vgvy" \| let res=system("pbcopy", @") \|<cr>
 nmap <leader>p d:let @*=expand("%:p")<CR>
 
@@ -45,7 +60,7 @@ nmap <leader>sw :Rg <C-R><C-W><CR>
 nmap <leader>ss :Rg! 
 
 let g:gitgutter_sign_added="˖"            | let g:gitgutter_sign_modified="◈"
-let g:gitgutter_sign_modified_removed="▰" | let g:gitgutter_sign_removed="྾"
+le g:gitgutter_sign_modified_removed="▰" | let g:gitgutter_sign_removed="྾"
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gv :call CocAction('jumpDefinition', 'vsplit')<cr>
@@ -57,6 +72,29 @@ vmap ga <Plug>(coc-codeaction-selected)
 
 command! -nargs=0 Format :call CocAction('format')
 command! -nargs=0 Organize :call CocAction('runCommand', 'editor.action.organizeImport')
+nmap <leader>z :Zen<cr> 
+
+let g:goyo_width = 120
+command! -nargs=0 Zen Goyo
+
+
+function! s:goyo_enter()
+  "if executable('tmux') && strlen($TMUX)
+  "silent !tmux set status off
+  "silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+  "endif
+endfunction
+
+function! s:goyo_leave()
+  "if executable('tmux') && strlen($TMUX)
+  "silent !tmux set status on
+  "silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  "endif
+  source $HOME/vloth/dotfiles/themes/challenger_deep.vim
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
 inoremap <silent><expr> <c-space> coc#refresh()
