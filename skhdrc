@@ -65,8 +65,8 @@ alt - t : yabai -m space --create && \
 alt - q : yabai -m space --destroy
 
 # float
-cmd - f : yabai -m window --toggle float;\
-          yabai -m window --grid 5:5:2:0:4:5
+# cmd - f : yabai -m window --toggle float;\
+          # yabai -m window --grid 5:5:2:0:4:5
 
 # custom enterprise bindings
 .load "vloth/dotfiles/skhdrc.enterprise"

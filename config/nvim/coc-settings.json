@@ -4,10 +4,10 @@
 
    "suggest.autoTrigger":"trigger",
 
-   "diagnostic.errorSign":"ﮊ",
-   "diagnostic.warningSign":"",
-   "diagnostic.infoSign":"",
-   "diagnostic.hintSign":"﯎",
+   "diagnostic.errorSign":"›",
+   "diagnostic.warningSign":"¬",
+   "diagnostic.infoSign":"▪",
+   "diagnostic.hintSign":"⊙",
 
    "eslint.autoFixOnSave":true,
    "javascript.suggest.enabled":true,
@@ -16,6 +16,16 @@
 
    "json.enable": true,
    "json.format.enable": true,
+
+   "languageserver": {
+     "rescript": {
+       "enable": true,
+       "module": "~/.local/share/nvim/plugged/vim-rescript/rescript-vscode/extension/server/out/server.js",
+       "args": ["--node-ipc"],
+       "filetypes": ["rescript"],
+       "rootPatterns": ["bsconfig.json"]
+     }
+   },
 
    "diagnostic-languageserver.filetypes": {"clojure": ["joker", "clj-kondo"]},
    "diagnostic-languageserver.formatFiletypes": {"clojure": "joker"},

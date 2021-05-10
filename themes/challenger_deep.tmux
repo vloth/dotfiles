@@ -1,5 +1,5 @@
 FG=colour244
-BG=colour0
+BG=colour234
 ACTIVE_1=colour5
 CONTRAST=colour240
 BORDER=colour0
@@ -9,7 +9,7 @@ set -g pane-active-border-style fg=$ACTIVE_1,bg=$BORDER
 
 set -g status-justify left
 set -g status-position bottom
-set -g status-bg default
+set -g status-bg $BG
 set -g status-fg $FG
 set -g status-left ''
 set -g status-right ''

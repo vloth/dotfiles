@@ -7,7 +7,9 @@
 
 [commit]
   template = ~/.gitmessage
-  gpgsign = true
+  #gpgsign = true
 
 [rerere]
   enabled = true
+[gpg]
+	program = gpg

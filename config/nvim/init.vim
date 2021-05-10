@@ -8,24 +8,34 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'melonmanchan/vim-tmux-resizer'
 Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
-Plug 'Olical/conjure', {'tag': 'v4.5.0'}
+Plug 'Olical/conjure'
 Plug 'junegunn/goyo.vim'
 Plug 'bfontaine/zprint.vim'
 Plug 'guns/vim-clojure-static'
 Plug 'luochen1990/rainbow'
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'rescript-lang/vim-rescript', { 'for': 'rescript' }
 
 call plug#end()
 
+au BufRead,BufNewFile *.res set filetype=rescript
+
+if has("autocmd")
+    au BufReadPost *.rkt,*.rktl set filetype=racket
+    au filetype racket set lisp
+    au filetype racket set autoindent
+endif
+let g:conjure#client#racket#stdio#command = "racket/base"
+
 let g:rainbow_active = 1
 
- let g:sexp_mappings = {
-            \ 'sexp_swap_list_backward':     '',
-            \ 'sexp_swap_list_forward':      '',
-            \ 'sexp_swap_element_backward':  '',
-            \ 'sexp_swap_element_forward':   '',
-            \ }
+let g:sexp_mappings = {
+          \ 'sexp_swap_list_backward':     '',
+          \ 'sexp_swap_list_forward':      '',
+          \ 'sexp_swap_element_backward':  '',
+          \ 'sexp_swap_element_forward':   '',
+          \ }
 
 let mapleader=" " | let maplocalleader=";"
 set nonumber
@@ -59,8 +69,8 @@ nmap <leader><leader> :Buffers<cr>
 nmap <leader>sw :Rg <C-R><C-W><CR> 
 nmap <leader>ss :Rg! 
 
-let g:gitgutter_sign_added="˖"            | let g:gitgutter_sign_modified="◈"
-le g:gitgutter_sign_modified_removed="▰" | let g:gitgutter_sign_removed="྾"
+let g:gitgutter_sign_added="˖"           | let g:gitgutter_sign_modified="𝜕"
+let g:gitgutter_sign_modified_removed="𝑥" | let g:gitgutter_sign_removed="྾"
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gv :call CocAction('jumpDefinition', 'vsplit')<cr>
@@ -127,4 +137,4 @@ endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
-source $HOME/vloth/dotfiles/themes/palenight.vim
+source $HOME/vloth/dotfiles/themes/horizonDark.vim
