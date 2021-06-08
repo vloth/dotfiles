@@ -28,7 +28,9 @@ if has("autocmd")
 endif
 let g:conjure#client#racket#stdio#command = "racket/base"
 
-let g:rainbow_active = 1
+" light theme
+" let g:rainbow_conf = { 'ctermfgs': ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow'] }
+let g:rainbow_active = 0
 
 let g:sexp_mappings = {
           \ 'sexp_swap_list_backward':     '',
@@ -137,4 +139,4 @@ endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
-source $HOME/vloth/dotfiles/themes/horizonDark.vim
+source $HOME/vloth/dotfiles/themes/challenger_deep.vim

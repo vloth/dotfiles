@@ -1,8 +1,8 @@
 FG=colour244
-BG=colour0
-ACTIVE_1=colour5
+BG=colour15
+ACTIVE_1=colour6
 CONTRAST=colour240
-BORDER=colour0
+BORDER=colour7
 
 set -g pane-border-style fg=$BORDER,bg=$BORDER
 set -g pane-active-border-style fg=$ACTIVE_1,bg=$BORDER

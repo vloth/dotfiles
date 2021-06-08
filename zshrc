@@ -28,7 +28,7 @@ export EDITOR
 export PATH="/usr/local/opt/nss/bin:/usr/local/opt/python@2/libexec/bin:$PATH"
 export PATH="/usr/local/opt/avr-gcc@7/bin:$PATH"
 export PATH="/Applications/Racket/bin:$PATH"
-export BAT_THEME="Nord"
+export BAT_THEME="TwoDark"
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
 
 source "${HOME}/.zgen/zgen.zsh"
@@ -46,8 +46,8 @@ if ! zgen saved; then
     zgen save
 fi
 
-MNML_USER_CHAR=''
-MNML_OK_COLOR=4
+MNML_USER_CHAR='\ufb32'
+MNML_OK_COLOR=5
 MNML_INSERT_CHAR=''
 MNML_PROMPT=(mnml_status mnml_keymap)
 MNML_RPROMPT=()
@@ -64,15 +64,15 @@ source ~/.alias
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*" --glob "!node_modules"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-# --color=dark
-# --color=fg:-1,bg:-1,hl:#c678dd,fg+:#ffffff,bg+:#4b5263,hl+:#d858fe
-# --color=info:#98c379,prompt:#61afef,pointer:#be5046,marker:#e5c07b,spinner:#61afef,header:#61afef
-# '
-export FZF_DEFAULT_OPTS='
-  --color fg:-1,bg:-1,hl:230,fg+:3,bg+:233,hl+:229
-  --color info:150,prompt:110,spinner:150,pointer:167,marker:174
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+--color=dark
+--color=fg:-1,bg:-1,hl:#c678dd,fg+:#ffffff,bg+:#4b5263,hl+:#d858fe
+--color=info:#98c379,prompt:#61afef,pointer:#be5046,marker:#e5c07b,spinner:#61afef,header:#61afef
 '
+# export FZF_DEFAULT_OPTS='
+# --color light,hl:33,hl+:37,fg+:235,bg+:7,fg+:240
+# --color info:254,prompt:37,spinner:108,pointer:235,marker:235
+# '
 
 export PATH="/usr/local/opt/avr-gcc@8/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/avr-gcc@8/lib"
