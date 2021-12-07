@@ -1,0 +1,81 @@
+live_config_reload: true
+
+window:
+  dynamic_title: false
+  dynamic_padding: false
+  decorations: none
+  dimensions:
+    columns: 0
+    lines: 0
+  padding:
+    x: 15
+    y: 15
+
+cursor:
+  style: Block
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+  save_to_clipboard: true
+
+font:
+  normal:
+    family: JetBrainsMonoMedium Nerd Font Mono
+    style: Medium
+  bold:
+    family: JetBrainsMonoExtraBold Nerd Font Mono
+    style: Extra Bold
+  italic:
+    family: JetBrainsMonoMedium Nerd Font Mono
+    style: Medium Italic
+  size: 10
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+  use_thin_strokes: true
+
+# fix option+hjkl and create font bindings
+key_bindings:
+  - { key: H,           mods: Alt,             chars: "\x1bh"           }
+  - { key: H,           mods: Alt|Shift,       chars: "\x1bH"           }
+  - { key: J,           mods: Alt,             chars: "\x1bj"           }
+  - { key: J,           mods: Alt|Shift,       chars: "\x1bJ"           }
+  - { key: K,           mods: Alt,             chars: "\x1bk"           }
+  - { key: K,           mods: Alt|Shift,       chars: "\x1bK"           }
+  - { key: L,           mods: Alt,             chars: "\x1bl"           }
+  - { key: L,           mods: Alt|Shift,       chars: "\x1bL"           }
+  - { key: Z,           mods: Command,         action: ResetFontSize    }
+  - { key: I,           mods: Command,         action: IncreaseFontSize }
+  - { key: D,           mods: Command,         action: DecreaseFontSize }
+
+colors:
+  primary:
+    background: '0x1c1b22'
+    foreground: '0xd1d5da'
+
+  normal:
+    black:   '0x24292e'
+    red:     '0xc03c3c'
+    green:   '0x1ca76f'
+    yellow:  '0xe2e210'
+    blue:    '0x2f71bb'
+    magenta: '0xbc3fbc'
+    cyan:    '0x2092ae'
+    white:   '0xc3c8cf'
+
+  bright:
+    black:   '0x666666'
+    red:     '0xf14c4c'
+    green:   '0x23d18b'
+    yellow:  '0xf5f543'
+    blue:    '0x3b8eea'
+    magenta: '0xd670d6'
+    cyan:    '0x29b7da'
+    white:   '0xd1d5da'
+
+  indexed_colors:
+    - { index: 16, color: '0xd18616' }
+    - { index: 17, color: '0xf14c4c' }

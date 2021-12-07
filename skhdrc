@@ -1,0 +1,44 @@
+# Open alacritty
+ctrl + cmd - return : open --new -a /Applications/Alacritty.app/Contents/MacOS/alacritty
+
+# Minimize window
+cmd - m: yabai -m window --minimize && yabai -m window --focus prev || yabai -m window --focus first
+
+# Focus window [north|south]
+cmd - j : yabai -m window --focus south
+cmd - k : yabai -m window --focus north
+
+# Focus window [west|east], support multiple monitors
+cmd - h : yabai -m window --focus west || \
+          yabai -m window --focus $(yabai -m query --windows --display west | \
+                                    jq 'map(select(.visible == 1)) | sort_by(.frame.x, .frame.y) | last | .id') || \
+          yabai -m display --focus west
+
+cmd - l : yabai -m window --focus east || \
+          yabai -m window --focus $(yabai -m query --windows --display east | \
+                                    jq 'map(select(.visible == 1)) | sort_by(.frame.x, .frame.y) | first | .id') || \
+          yabai -m display --focus east
+
+# Send window to monitor and follow focus
+cmd + ctrl - l  : yabai -m window --display next; yabai -m display --focus next
+cmd + ctrl - h  : yabai -m window --display prev; yabai -m display --focus prev
+
+# Swap window left/right
+alt - s : yabai -m window --swap first || yabai -m window --swap last 
+
+# Balance windows
+alt - r :  yabai -m space --balance
+
+# Cycle through spaces
+alt - p : yabai -m space --focus prev || yabai -m space --focus last && yabai -m windows --focus last
+alt - n : yabai -m space --focus next || yabai -m space --focus first && yabai -m windows --focus first
+
+# Create space, move window and follow focus
+alt - t : yabai -m space --create && \
+          index=$(yabai -m query --spaces --display | jq 'map(select(."is-native-fullscreen" == false))[-1].index') && \
+	  yabai -m window --space "${index}" && \
+          yabai -m space --focus ${index}
+
+# Destroy space
+alt - q : yabai -m space --destroy
+
