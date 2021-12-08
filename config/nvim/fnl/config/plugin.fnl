@@ -34,7 +34,12 @@
   ;clojure
   :Olical/conjure {:branch :master :mod :conjure}
 
-  ;file searching
+  ;file explorer/search
+  :lambdalisue/fern.vim {:mod :fern
+                         :requires [:antoinemadec/FixCursorHold.nvim
+                                    :lambdalisue/nerdfont.vim
+                                    :lambdalisue/fern-renderer-nerdfont.vim
+                                    :lambdalisue/glyph-palette.vim]}
   :nvim-telescope/telescope.nvim {:requires [:nvim-lua/popup.nvim
                                              :nvim-lua/plenary.nvim]
                                   :mod :telescope}
