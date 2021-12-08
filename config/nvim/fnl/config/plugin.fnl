@@ -27,19 +27,25 @@
 (use
   ;plugin Manager
   :wbthomason/packer.nvim {}
+
   ;nvim config and plugins in Fennel
   :Olical/aniseed {:branch :develop}
+
   ;clojure
   :Olical/conjure {:branch :master :mod :conjure}
+
   ;file searching
   :nvim-telescope/telescope.nvim {:requires [:nvim-lua/popup.nvim
                                              :nvim-lua/plenary.nvim]
                                   :mod :telescope}
+
   ;parsing system
   :nvim-treesitter/nvim-treesitter {:run ":TSUpdate"
                                     :mod :treesitter}
+
   ;lsp
   :neovim/nvim-lspconfig {:mod :lspconfig}
+
   ;autocomplete
   :hrsh7th/nvim-cmp {:requires [:hrsh7th/cmp-buffer
                                 :hrsh7th/cmp-nvim-lsp

@@ -49,4 +49,12 @@
   ;; Clojure
   (lsp.clojure_lsp.setup {:on_attach on_attach
                           :handlers handlers
-                          :capabilities capabilities}))
+                          :capabilities capabilities})
+  
+  
+  ;; Typescript / Jacasript
+  (lsp.tsserver.setup    {:on_attach on_attach
+                          :handlers handlers
+                          :capabilities capabilities})
+
+  (lsp.eslint.setup {}))
