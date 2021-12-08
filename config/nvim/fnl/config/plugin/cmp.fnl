@@ -1,16 +1,26 @@
 (module config.plugin.cmp
   {autoload {nvim aniseed.nvim
-             cmp cmp}})
+             cmp cmp
+             luasnip luasnip}})
 
 (def- cmp-src-menu-items
   {:buffer "buff"
+   :calc "calc"
    :conjure "conj"
-   :nvim_lsp "lsp"})
+   :nvim_lsp "lsp"
+   :path "path"
+   :vsnip "vsnp"
+   :luasnip "lsnp"})
 
 (def- cmp-srcs
   [{:name :nvim_lsp}
    {:name :conjure}
-   {:name :buffer}])
+   {:name :luasnip}
+   {:name :buffer}
+   {:name :path}
+   {:name :nvim_lua}
+   {:name :vsnip}
+   {:name :calc}])
 
 ;; Setup cmp with desired settings
 (cmp.setup {:formatting
@@ -25,4 +35,8 @@
                       :<C-e> (cmp.mapping.close)
                       :<CR> (cmp.mapping.confirm {:behavior cmp.ConfirmBehavior.Insert
                                                   :select true})}
+            :snippet {:expand (fn [args]
+                                (luasnip.lsp_expand args.body))}
             :sources cmp-srcs})
+
+(nvim.ex.hi "CmpItemMenu ctermfg=7 guifg=#b1b1b1")

@@ -48,12 +48,26 @@
   :nvim-treesitter/nvim-treesitter {:run ":TSUpdate"
                                     :mod :treesitter}
 
+  ;tmux
+  :christoomey/vim-tmux-navigator {:mod :tmux-navigator}
+  :melonmanchan/vim-tmux-resizer {}
+
+  ;sexp
+  :guns/vim-sexp {:mod :sexp}
+  :tpope/vim-sexp-mappings-for-regular-people {}
+  :tpope/vim-repeat {}
+  :tpope/vim-surround {}
+
   ;lsp
   :neovim/nvim-lspconfig {:mod :lspconfig}
 
   ;autocomplete
   :hrsh7th/nvim-cmp {:requires [:hrsh7th/cmp-buffer
+                                :hrsh7th/cmp-path
+                                :hrsh7th/cmp-calc
                                 :hrsh7th/cmp-nvim-lsp
+                                :hrsh7th/cmp-nvim-lua
+                                :hrsh7th/cmp-vsnip
                                 :PaterJason/cmp-conjure]
                      :mod :cmp}
   ;theme
