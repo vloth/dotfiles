@@ -2,7 +2,7 @@
 export ZSH="/Users/franciscoberrocal/.oh-my-zsh"
 ZSH_THEME="lambda"
 
-# nvim 
+# nvim
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"

@@ -17,6 +17,8 @@
        :backup false
        :swapfile false
        :showmode false
+       ;show signcolumn in line nunmbers column
+       :signcolumn "number"
        ;show line numbers
        :number true
        ;show line and column number

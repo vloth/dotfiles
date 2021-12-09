@@ -41,7 +41,8 @@
                                     :lambdalisue/fern-renderer-nerdfont.vim
                                     :lambdalisue/glyph-palette.vim]}
   :nvim-telescope/telescope.nvim {:requires [:nvim-lua/popup.nvim
-                                             :nvim-lua/plenary.nvim]
+                                             :nvim-lua/plenary.nvim
+                                             :kyazdani42/nvim-web-devicons]
                                   :mod :telescope}
 
   ;parsing system
