@@ -47,7 +47,8 @@
 
   ;parsing system
   :nvim-treesitter/nvim-treesitter {:run ":TSUpdate"
-                                    :mod :treesitter}
+                                    :mod :treesitter
+                                    :requires [:nvim-treesitter/nvim-treesitter-textobjects]}
 
   ;tmux
   :christoomey/vim-tmux-navigator {:mod :tmux-navigator}

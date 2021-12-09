@@ -42,3 +42,8 @@ alt - t : yabai -m space --create && \
 # Destroy space
 alt - q : yabai -m space --destroy
 
+# Restart yabai
+shift + lctrl + alt - r : \
+    /usr/bin/env osascript <<< \
+        "display notification \"Restarting Yabai\" with title \"Yabai\""; \
+    launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
