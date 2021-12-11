@@ -9,6 +9,7 @@
 ;don't wrap lines
 (nvim.ex.set :nowrap)
 
+
 (let [options
       {:encoding "utf-8"
        :spelllang "en_us"
@@ -17,6 +18,7 @@
        :backup false
        :swapfile false
        :showmode false
+       :termguicolors true
        ;show signs and numbers in the same column
        :signcolumn "number"
        ;show line numbers

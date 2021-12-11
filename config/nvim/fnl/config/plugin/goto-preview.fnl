@@ -1,4 +1,4 @@
-(module config.plugin.goto-preview
+(module config.plugin.nvim-tree-lua
   {autoload {nvim aniseed.nvim
              preview goto-preview}})
 

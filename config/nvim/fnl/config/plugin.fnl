@@ -35,11 +35,8 @@
   :Olical/conjure {:branch :master :mod :conjure}
 
   ;file explorer/search
-  :lambdalisue/fern.vim {:mod :fern
-                         :requires [:antoinemadec/FixCursorHold.nvim
-                                    :lambdalisue/nerdfont.vim
-                                    :lambdalisue/fern-renderer-nerdfont.vim
-                                    :lambdalisue/glyph-palette.vim]}
+  :kyazdani42/nvim-tree.lua {:mod :nvim-tree-lua
+                             :requires [:kyazdani42/nvim-web-devicons]}
   :nvim-telescope/telescope.nvim {:requires [:nvim-lua/popup.nvim
                                              :nvim-lua/plenary.nvim
                                              :kyazdani42/nvim-web-devicons]
