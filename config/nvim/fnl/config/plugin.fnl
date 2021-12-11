@@ -47,8 +47,7 @@
 
   ;parsing system
   :nvim-treesitter/nvim-treesitter {:run ":TSUpdate"
-                                    :mod :treesitter
-                                    :requires [:nvim-treesitter/nvim-treesitter-textobjects]}
+                                    :mod :treesitter}
 
   ;tmux
   :christoomey/vim-tmux-navigator {:mod :tmux-navigator}
@@ -62,6 +61,7 @@
 
   ;lsp
   :neovim/nvim-lspconfig {:mod :lspconfig}
+  :rmagatti/goto-preview {:mod :goto-preview}
 
   ;autocomplete
   :hrsh7th/nvim-cmp {:requires [:hrsh7th/cmp-buffer

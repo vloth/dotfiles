@@ -3,18 +3,20 @@
              lsp lspconfig
              cmplsp cmp_nvim_lsp}})
 
-; (boolean (nvim.fn.has "nvim-0.5")) 
+(defn define-signs
+  [prefix]
+  (let [error (.. prefix "SignError")
+        warn  (.. prefix "SignWarn")
+        info  (.. prefix "SignInfo")
+        hint  (.. prefix "SignHint")]
+  (vim.fn.sign_define error {:text "" :texthl error})
+  (vim.fn.sign_define warn  {:text "" :texthl warn})
+  (vim.fn.sign_define info  {:text "כֿ" :texthl info})
+  (vim.fn.sign_define hint  {:text "" :texthl hint})))
 
-;symbols to show for lsp diagnostics
-(vim.fn.sign_define "LspDiagnosticsSignError" {:text "" :texthl "LspDiagnosticsSignError"})
-(vim.fn.sign_define "LspDiagnosticsSignWarning" {:text "" :texthl "LspDiagnosticsSignWarning"})
-(vim.fn.sign_define "LspDiagnosticsSignInformation" {:text "כֿ" :texthl "LspDiagnosticsSignInformation"})
-(vim.fn.sign_define "LspDiagnosticsSignHint" {:text "" :texthl "LspDiagnosticsSignHint"})
-
-; (vim.fn.sign_define "DiagnosticSignError" {:text "" :texthl "DiagnosticSignError"})
-; (vim.fn.sign_define "DiagnosticSignWarn" {:text "" :texthl "DiagnosticSignWarn"})
-; (vim.fn.sign_define "DiagnosticSignInfo" {:text "כֿ" :texthl "DiagnosticSignInfo"})
-; (vim.fn.sign_define "DiagnosticSignHint" {:text "" :texthl "DiagnosticSignHint"})
+(if (= (nvim.fn.has "nvim-0.6") 1)
+  (define-signs "Diagnostic")
+  (define-signs "LspDiagnostics"))
 
 ;server features
 (let [handlers {"textDocument/publishDiagnostics"
@@ -23,7 +25,7 @@
                   {:severity_sort true
                    :update_in_insert false
                    :underline true
-                   :virtual_text false})
+                   :virtual_text true})
                 "textDocument/hover"
                 (vim.lsp.with
                   vim.lsp.handlers.hover
