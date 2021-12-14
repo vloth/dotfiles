@@ -11,4 +11,4 @@
                     :width 40}
              :update_focused_file {:enable true}})
 
-(nvim.set_keymap :n :<leader>tt "<cmd>lua require 'nvim-tree'.toggle()<cr>" {:noremap true :silent true})
+(nvim.set_keymap :n :tt "<cmd>lua require 'nvim-tree'.toggle()<cr>" {:noremap true :silent true})

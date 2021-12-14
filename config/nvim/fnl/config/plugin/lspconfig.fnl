@@ -66,4 +66,5 @@
                           :handlers handlers
                           :capabilities capabilities})
 
-  (lsp.eslint.setup {}))
+  (lsp.eslint.setup {:on_attach (fn [_ bufnr] 
+                                  (nvim.buf_set_keymap bufnr :n :<leader>lF "<cmd>EslintFixAll<CR><cr>" {:noremap true}))}))
