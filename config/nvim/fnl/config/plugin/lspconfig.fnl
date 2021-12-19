@@ -59,12 +59,12 @@
   (lsp.clojure_lsp.setup {:on_attach on_attach
                           :handlers handlers
                           :capabilities capabilities})
-  
-  
+
+
   ;; Typescript / Jacasript
   (lsp.tsserver.setup    {:on_attach on_attach
                           :handlers handlers
                           :capabilities capabilities})
 
   (lsp.eslint.setup {:on_attach (fn [_ bufnr] 
-                                  (nvim.buf_set_keymap bufnr :n :<leader>lF "<cmd>EslintFixAll<CR><cr>" {:noremap true}))}))
+                                  (nvim.ex.autocmd "BufWritePre" "*.ts,*.tsx"  "EslintFixAll"))}))

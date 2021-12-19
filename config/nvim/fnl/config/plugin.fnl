@@ -70,4 +70,7 @@
                                 :PaterJason/cmp-conjure]
                      :mod :cmp}
   ;theme
-  :projekt0n/github-nvim-theme {:mod :theme})
+  :shaunsingh/moonlight.nvim {:mod :theme}
+
+  ;bufferline
+  :akinsho/bufferline.nvim {:mod :bufferline})

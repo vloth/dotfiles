@@ -4,11 +4,15 @@ ctrl + cmd - return : open --new -a /Applications/Alacritty.app/Contents/MacOS/a
 # Minimize window
 cmd - m: yabai -m window --minimize && yabai -m window --focus prev || yabai -m window --focus first
 
-# Focus window [north|south]
-cmd - j : yabai -m window --focus south
-cmd - k : yabai -m window --focus north
-
-# Focus window [west|east], support multiple monitors
+# Focus window [north|south|west|east], support multiple monitors
+cmd - j : yabai -m window --focus south || \
+          yabai -m window --focus $(yabai -m query --windows --display south | \
+                                    jq 'map(select(.visible == 1)) | sort_by(.frame.x, .frame.y) | last | .id') || \
+          yabai -m display --focus south
+cmd - k : yabai -m window --focus north || \
+          yabai -m window --focus $(yabai -m query --windows --display north | \
+                                    jq 'map(select(.visible == 1)) | sort_by(.frame.x, .frame.y) | last | .id') || \
+          yabai -m display --focus north
 cmd - h : yabai -m window --focus west || \
           yabai -m window --focus $(yabai -m query --windows --display west | \
                                     jq 'map(select(.visible == 1)) | sort_by(.frame.x, .frame.y) | last | .id') || \

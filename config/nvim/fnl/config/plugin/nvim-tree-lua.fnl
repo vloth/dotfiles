@@ -4,7 +4,6 @@
              util config.util}})
 
 (util.set-global-variable "nvim_tree_respect_buf_cwd" 1)
-(util.set-global-variable "nvim_tree_quit_on_open" 1)
 
 (tree.setup {:update_cwd true
              :view {:auto_resize true
