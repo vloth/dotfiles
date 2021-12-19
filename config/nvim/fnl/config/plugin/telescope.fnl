@@ -16,3 +16,4 @@
 (nvim.set_keymap :n :<leader>fs ":lua require('telescope.builtin').git_status()<CR>" {:noremap true})
 (nvim.set_keymap :n :<leader>fj ":lua require('telescope.builtin').jumplist()<CR>" {:noremap true})
 (nvim.set_keymap :n :<leader>fq ":lua require('telescope.builtin').quickfix()<CR>" {:noremap true})
+(nvim.set_keymap :n :<leader>fm ":lua require('telescope.builtin').marks()<CR>" {:noremap true})
