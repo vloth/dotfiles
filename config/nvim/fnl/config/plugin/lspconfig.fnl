@@ -25,7 +25,7 @@
                   {:severity_sort true
                    :update_in_insert false
                    :underline true
-                   :virtual_text true})
+                   :virtual_text false})
                 "textDocument/hover"
                 (vim.lsp.with
                   vim.lsp.handlers.hover
@@ -48,10 +48,10 @@
                     (nvim.buf_set_keymap bufnr :n :<leader>lf "<cmd>lua vim.lsp.buf.formatting()<cr>" {:noremap true})
                     (nvim.buf_set_keymap bufnr :n :<leader>lj "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>" {:noremap true})
                     (nvim.buf_set_keymap bufnr :n :<leader>lk "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>" {:noremap true})
+                    (nvim.buf_set_keymap bufnr :n :<leader>la "<cmd>lua vim.lsp.buf.code_action()<cr>" {:noremap true})
+                    (nvim.buf_set_keymap bufnr :v :<leader>la ":'<,'>lua vim.lsp.buf.code_action()<cr>" {:noremap true})
                     ;telescope
-                    (nvim.buf_set_keymap bufnr :n :<leader>la ":lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_cursor())<cr>" {:noremap true})
-                    (nvim.buf_set_keymap bufnr :v :<leader>la ":'<,'>:Telescope lsp_range_code_actions theme=cursor<cr>" {:noremap true})
-                    (nvim.buf_set_keymap bufnr :n :<leader>lw ":lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>" {:noremap true})
+                    (nvim.buf_set_keymap bufnr :n :<leader>lw ":lua require('telescope.builtin').lsp_diagnostics()<cr>" {:noremap true})
                     (nvim.buf_set_keymap bufnr :n :<leader>lr ":lua require('telescope.builtin').lsp_references()<cr>" {:noremap true})
                     (nvim.buf_set_keymap bufnr :n :<leader>li ":lua require('telescope.builtin').lsp_implementations()<cr>" {:noremap true})))]
 
@@ -61,10 +61,12 @@
                           :capabilities capabilities})
 
 
-  ;; Typescript / Jacasript
+  ;; Typescript / Javasript
   (lsp.tsserver.setup    {:on_attach on_attach
                           :handlers handlers
                           :capabilities capabilities})
 
   (lsp.eslint.setup {:on_attach (fn [_ bufnr] 
                                   (nvim.ex.autocmd "BufWritePre" "*.ts,*.tsx"  "EslintFixAll"))}))
+
+(nvim.ex.autocmd :CursorHold :* "lua vim.diagnostic.open_float({ focusable = false })")

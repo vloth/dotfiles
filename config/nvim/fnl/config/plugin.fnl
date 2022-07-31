@@ -25,7 +25,7 @@
 
 ;plugins managed by packer
 (use
-  ;plugin Manager
+  ;plugin manager
   :wbthomason/packer.nvim {}
 
   ;nvim config and plugins in Fennel
@@ -39,6 +39,7 @@
                              :requires [:kyazdani42/nvim-web-devicons]}
   :nvim-telescope/telescope.nvim {:requires [:nvim-lua/popup.nvim
                                              :nvim-lua/plenary.nvim
+                                             :nvim-telescope/telescope-ui-select.nvim
                                              :kyazdani42/nvim-web-devicons]
                                   :mod :telescope}
 
@@ -58,19 +59,25 @@
 
   ;lsp
   :neovim/nvim-lspconfig {:mod :lspconfig}
-  :rmagatti/goto-preview {:mod :goto-preview}
 
-  ;autocomplete
+  ;autocomplete / snip
   :hrsh7th/nvim-cmp {:requires [:hrsh7th/cmp-buffer
                                 :hrsh7th/cmp-path
                                 :hrsh7th/cmp-calc
                                 :hrsh7th/cmp-nvim-lsp
                                 :hrsh7th/cmp-nvim-lua
                                 :hrsh7th/cmp-vsnip
+                                :hrsh7th/vim-vsnip
                                 :PaterJason/cmp-conjure]
                      :mod :cmp}
+
   ;theme
   :shaunsingh/moonlight.nvim {:mod :theme}
 
+  ;comment
+  :b3nj5m1n/kommentary {:mod :comment}
+
   ;bufferline
-  :akinsho/bufferline.nvim {:mod :bufferline})
+  :akinsho/bufferline.nvim {:mod :bufferline
+                            :tag "v2.*"
+                            :requires [:kyazdani42/nvim-web-devicons]})

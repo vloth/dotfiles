@@ -1,13 +1,12 @@
 (module config.plugin.nvim-tree-lua
   {autoload {nvim aniseed.nvim
              tree nvim-tree
-             util config.util}})
-
-(util.set-global-variable "nvim_tree_respect_buf_cwd" 1)
+             util config.util}
+   require-macros [config.macros]})
 
 (tree.setup {:update_cwd true
-             :view {:auto_resize true
-                    :width 40}
+             :respect_buf_cwd true
+             :view {:width 40}
              :update_focused_file {:enable true}})
 
 (nvim.set_keymap :n :tt "<cmd>lua require 'nvim-tree'.toggle()<cr>" {:noremap true :silent true})

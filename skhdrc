@@ -17,7 +17,6 @@ cmd - h : yabai -m window --focus west || \
           yabai -m window --focus $(yabai -m query --windows --display west | \
                                     jq 'map(select(.visible == 1)) | sort_by(.frame.x, .frame.y) | last | .id') || \
           yabai -m display --focus west
-
 cmd - l : yabai -m window --focus east || \
           yabai -m window --focus $(yabai -m query --windows --display east | \
                                     jq 'map(select(.visible == 1)) | sort_by(.frame.x, .frame.y) | first | .id') || \
@@ -26,6 +25,8 @@ cmd - l : yabai -m window --focus east || \
 # Send window to monitor and follow focus
 cmd + ctrl - l  : yabai -m window --display next; yabai -m display --focus next
 cmd + ctrl - h  : yabai -m window --display prev; yabai -m display --focus prev
+cmd + ctrl - j  : yabai -m window --display south; yabai -m display --focus south
+cmd + ctrl - k  : yabai -m window --display north; yabai -m display --focus north
 
 # Swap window left/right
 alt - s : yabai -m window --swap first || yabai -m window --swap last 
@@ -33,7 +34,19 @@ alt - s : yabai -m window --swap first || yabai -m window --swap last
 # Balance windows
 alt - r :  yabai -m space --balance
 
+# Fullscreen
+alt - f : yabai -m window --toggle zoom-fullscreen
+
+# increase/decrease right window
+alt - a : yabai -m window --resize left:-100:0
+alt + cmd - a : yabai -m window --resize left:+100:0
+
+# increase/decrease left window
+alt - d : yabai -m window --resize right:+100:0
+alt + cmd - d : yabai -m window --resize right:-100:0 
+
 # Cycle through spaces
+# alt - p : yabai -m space --focus recent
 alt - p : yabai -m space --focus prev || yabai -m space --focus last && yabai -m windows --focus last
 alt - n : yabai -m space --focus next || yabai -m space --focus first && yabai -m windows --focus first
 

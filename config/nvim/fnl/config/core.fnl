@@ -9,6 +9,7 @@
 ;don't wrap lines
 (nvim.ex.set :nowrap)
 
+(vim.api.nvim_command "set updatetime=300")
 
 (let [options
       {:encoding "utf-8"

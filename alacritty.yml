@@ -8,8 +8,8 @@ window:
     columns: 0
     lines: 0
   padding:
-    x: 5
-    y: 5
+    x: 10
+    y: 10
 
 cursor:
   style: Block
@@ -28,7 +28,7 @@ font:
   italic:
     family: JetBrainsMonoMedium Nerd Font Mono
     style: Medium Italic
-  size: 10
+  size: 14
   offset:
     x: 0
     y: 0

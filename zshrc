@@ -59,3 +59,4 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=info:#23d18b,prompt:#d7005f,pointer:#bc3fbc
 --color=marker:#87ff00,spinner:#bc3fbc,header:#e2e210'
 
+eval "$(pyenv init -)"
