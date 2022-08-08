@@ -45,10 +45,8 @@ alt + cmd - a : yabai -m window --resize left:+100:0
 alt - d : yabai -m window --resize right:+100:0
 alt + cmd - d : yabai -m window --resize right:-100:0 
 
-# Cycle through spaces
-# alt - p : yabai -m space --focus recent
-alt - p : yabai -m space --focus prev || yabai -m space --focus last && yabai -m windows --focus last
-alt - n : yabai -m space --focus next || yabai -m space --focus first && yabai -m windows --focus first
+# Cycle through spaces (in the same display)
+alt - c : id="$(yabai -m query --spaces --display | jq 'sort_by(.index) | reverse | .[map(."has-focus") | index(true) - 1].index')" && yabai -m space --focus "${id}"
 
 # Create space, move window and follow focus
 alt - t : yabai -m space --create && \
