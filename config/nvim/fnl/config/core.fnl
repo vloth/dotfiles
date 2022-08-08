@@ -39,7 +39,8 @@
        :clipboard "unnamedplus"
        ;show invisible characters
        :list true
-       :listchars (str.join "," ["tab:▶-" "trail:•" "extends:»" "precedes:«" "eol:¬"])
+       ;:listchars (str.join "," ["tab:▶-" "trail:•" "extends:»" "precedes:«" "eol:¬"])
+       :listchars (str.join "," ["tab:▶-" "trail:•" "extends:»" "precedes:«"])
        ;tabs is space
        :expandtab true
        ;tab/indent size

@@ -53,14 +53,14 @@ alt - n : yabai -m space --focus next || yabai -m space --focus first && yabai -
 # Create space, move window and follow focus
 alt - t : yabai -m space --create && \
           index=$(yabai -m query --spaces --display | jq 'map(select(."is-native-fullscreen" == false))[-1].index') && \
-	  yabai -m window --space "${index}" && \
+    yabai -m window --space "${index}" && \
           yabai -m space --focus ${index}
 
 # Destroy space
 alt - q : yabai -m space --destroy
 
 # Restart yabai
-shift + lctrl - r : \
+cmd + alt - r : \
     /usr/bin/env osascript <<< \
         "display notification \"Restarting Yabai\" with title \"Yabai\""; \
     launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
