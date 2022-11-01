@@ -60,3 +60,10 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=marker:#87ff00,spinner:#bc3fbc,header:#e2e210'
 
 eval "$(pyenv init -)"
+
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PATH="/Users/franciscoberrocal/Library/Python/3.10/bin:$PATH"
+
+eval "$(fnm env --use-on-cd)"
+export DOCKER_HOST=unix:///var/run/docker.sock

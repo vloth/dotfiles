@@ -34,7 +34,7 @@
                 (vim.lsp.with
                   vim.lsp.handlers.signature_help
                   {:border "single"})}
-      capabilities (cmplsp.update_capabilities (vim.lsp.protocol.make_client_capabilities))
+      capabilities (cmplsp.default_capabilities)
       on_attach (fn [client bufnr]
                   (do
                     (nvim.buf_set_keymap bufnr :n :gd "<cmd>lua vim.lsp.buf.definition()<cr>" {:noremap true})
@@ -67,6 +67,19 @@
                           :capabilities capabilities})
 
   (lsp.eslint.setup {:on_attach (fn [_ bufnr] 
-                                  (nvim.ex.autocmd "BufWritePre" "*.ts,*.tsx"  "EslintFixAll"))}))
+                                  (nvim.ex.autocmd "BufWritePre" "*.ts,*.tsx"  "EslintFixAll"))})
+  
+
+  ;; tailwindcss
+  (lsp.tailwindcss.setup {:on_attach on_attach
+                          :handlers handlers
+                          :filetypes ["clojure"]
+                          :capabilities capabilities
+                          :settings {:tailwindCSS {:experimental {:classRegex [":class \"([^\"])"]}}}})
+
+  ; Fsharp
+  (lsp.fsautocomplete.setup {:on_attach on_attach
+                             :handlers handlers
+                             :capabilities capabilities}))
 
 (nvim.ex.autocmd :CursorHold :* "lua vim.diagnostic.open_float({ focusable = false })")

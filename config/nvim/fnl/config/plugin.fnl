@@ -37,6 +37,8 @@
   ;file explorer/search
   :kyazdani42/nvim-tree.lua {:mod :nvim-tree-lua
                              :requires [:kyazdani42/nvim-web-devicons]}
+  :ibhagwan/fzf-lua         {:mod :fzf}
+                             :requires [:kyazdani42/nvim-web-devicons]
   :nvim-telescope/telescope.nvim {:requires [:nvim-lua/popup.nvim
                                              :nvim-lua/plenary.nvim
                                              :nvim-telescope/telescope-ui-select.nvim
@@ -60,6 +62,9 @@
   ;lsp
   :neovim/nvim-lspconfig {:mod :lspconfig}
 
+  ;fsharp
+  :adelarsq/neofsharp.vim {:mod :fsharp}
+
   ;autocomplete / snip
   :hrsh7th/nvim-cmp {:requires [:hrsh7th/cmp-buffer
                                 :hrsh7th/cmp-path
@@ -72,7 +77,7 @@
                      :mod :cmp}
 
   ;theme
-  :shaunsingh/moonlight.nvim {:mod :theme}
+  :shaunsingh/nord.nvim {:mod :theme}
 
   ;comment
   :b3nj5m1n/kommentary {:mod :comment}
